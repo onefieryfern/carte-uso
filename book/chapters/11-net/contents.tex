@@ -252,12 +252,12 @@ La fel, similar numerelor de telefon, este nevoie de o agendă prin care să ave
 
 Această ,,agendă'' este implementată în Internet de \textbf{serviciul DNS} \abbrev{DNS}{Domain Name System} (\textit{Domain Name System}).
 Cu ajutorul DNS putem folosi nume de stații (\textit{DNS hostnames}) sau nume de domenii (\textit{DNS domain names}), mai ușor de reținut.
-De exemplu, în loc de adresa \texttt{141.85.227.118} vom folosi numele \texttt{swarm.cs.pub.ro}, în loc de adresa \texttt{69.171.250.35} vom folosi \texttt{facebook.com}, iar în loc de adresa 161.148.164.31 vom folosi www.gov.br.
+De exemplu, în loc de adresa \texttt{141.85.227.118} vom folosi numele \texttt{swarm.cs.pub.ro}, în loc de adresa \texttt{69.171.250.35} vom folosi \texttt{facebook.com}, iar în loc de adresa \texttt{161.148.164.31} vom folosi www.gov.br.
 
 DNS nu este un termen prea cunoscut, pentru că folosirea DNS este transparentă utilizatorului de Internet.
 Utilizatorul pornește o aplicație precum un browser web, folosește numele \texttt{facebook.com}, iar aplicația va apela, în spate, la serviciul DNS pentru a afla adresa IP corespunzătoare numelui.
 Apoi aplicația se va conecta la serviciul de la acea adresă IP.
-Schematic, funcționarea DNS este indicată \labelindexref{Figura}{fig:net:dns}.
+Schematic, funcționarea DNS este indicată în \labelindexref{Figura}{fig:net:dns}.
 
 \begin{figure}[htbp]
   \centering
@@ -869,7 +869,7 @@ Aceste utilitare vor suprascrie modificările manuale pe care le-am realizat.
 Avem două opțiuni:
 \begin{itemize}
   \item Configurăm respectivele utilitare (NetworkManager, \cmd{resolvconf}, \cmd{systemd-resolved}) pentru a putea configura serverele DNS.
-    Nu mai edităm manual fișierul \file{/etc/resolv/conf}, ci configurăm utilitarele / serviciile respective.
+    Nu mai edităm manual fișierul \file{/etc/resolv.conf}, ci configurăm utilitarele / serviciile respective.
     Configurarea poate înseamna editarea unor fișiere de configurare, specifice utilitarului.
   \item Dezactivăm respectivele utilitare sau le configurăm să nu modifice fișierul \cmd{/etc/resolv.conf}.
     Apoi putem să edităm manual fișierul \file{/etc/resolv.conf}.
@@ -885,7 +885,7 @@ Astfel de informații se pot găsi pe Internet\footnote{Modurile în care putem 
 Atunci când sistemul dispune de interfață grafică, configurăm rețeaua folosind NetworkManager.
 Configurarea în linia de comandă are loc pe acele sisteme în care nu avem interfață grafică.
 În general, vom folosi linia de comandă și pe un sistem cu interfața grafică, dar mai degrabă pentru inspectarea configurației, așa cum am precizat în \labelindexref{Secțiunea}{sec:net:linux-config:inspect}.
-Cazurile în care vom folosi linia de comandă pentru configurarea rețelei înt-run sistem cu interfață grafică sunt limitate.
+Cazurile în care vom folosi linia de comandă pentru configurarea rețelei într-un sistem cu interfață grafică sunt limitate.
 
 Configurarea în linia de comandă poate fi realizată în mai multe moduri, depinzând de opțiunile utilizatorului și de distribuția folosită.
 Unele metode sunt comune distribuțiilor, altele sunt specifice; fiecare distribuție oferă metode preferate de configurare.
