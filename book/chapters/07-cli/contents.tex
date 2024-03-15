@@ -340,19 +340,19 @@ Shellul este procesul care pornește de la o comandă, identifică fișierul exe
 Procesul este creat printr-un API intern al sistemului de operare, care în Linux este dat de două funcții: \texttt{fork()} și \texttt{exec()}.
 \texttt{fork()} este un apel care creează un proces copil identic procesului părinte (o clonă a acestuia) iar \texttt{exec()} este apelul care modifică imaginea procesului copil cu cea din executabilul primit ca parametru.
 
-Astfel când shellul primește comanda \cmd{ls} și identifică executabilul \file{/bin/ls}, va crea un proces copil identic (tot shell) folosind \texttt{fork()} și apoi va înlocui imagina de executabil cu \file{/bin/ls} folosind \texttt{exec()} așa cum am prezentat în \labelindexref{Figura}{fig:process:create}.
+Astfel când shellul primește comanda \cmd{ls} și identifică executabilul \file{/bin/ls}, va crea un proces copil identic (tot shell) folosind \texttt{fork()} și apoi va înlocui imaginea de executabil cu \file{/bin/ls} folosind \texttt{exec()} așa cum am prezentat în \labelindexref{Figura}{fig:process:create}.
 
 Procesul nou creat are ca proces părinte shellul.
 De exemplu, dacă într-un shell rulăm comanda \cmd{sleep 100} care nu face nimic timp de \texttt{100} de secunde, iar în alt shell afișam informații despre procesul creat din această comandă, vedem că procesul părinte aferent este chiar shellul, ca în \labelindexref{Listing}{lst:cli:shell-child}.
 Vedem că shellul în care rulăm comanda \cmd{sleep 100} are PID-ul \texttt{14599}, PID care este indicat ca PID al procesului părinte (\texttt{PPID}) în rularea comenzii \cmd{ps -f -C sleep} într-un alt shell.
 
 \begin{screen}[caption={Shellul ca proces părinte},label={lst:cli:shell-child}]
-# int-un shell
+# într-un shell
 student@uso:~$ echo $$
 14599
 student@uso:~$ sleep 100
 
-# in alt shell
+# în alt shell
 student@uso:~$ ps -f -C sleep
 UID        PID  PPID  C STIME TTY          TIME CMD
 student  14619 14599  0 12:04 pts/1    00:00:00 sleep 100
